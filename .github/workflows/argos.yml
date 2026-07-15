@@ -1,0 +1,46 @@
+name: Argos
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+concurrency:
+  group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  id-token: write # Argos authenticates via OIDC — no token secret required
+
+jobs:
+  argos:
+    runs-on: ubuntu-latest
+    environment: pull_request_unsafe
+    name: Visual testing (Argos)
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 #v6.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js
+        uses: ./.github/actions/setup-node
+
+      - name: Install
+        run: yarn install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Build Storybook
+        run: yarn workspace @talend/ui-storybook-one run build-storybook
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Capture screenshots with Argos
+        run: npx playwright test --config=argos/playwright.config.ts

@@ -1,6 +1,8 @@
 {
   "devDependencies": {
+    "@argos-ci/playwright": "^7.3.6",
     "@changesets/cli": "^2.30.0",
+    "@playwright/test": "1.61.1",
     "@talend/eslint-config": "^14.1.2",
     "@talend/scripts-config-babel": "^13.10.1",
     "@talend/scripts-config-prettier": "^12.7.1",
@@ -9,6 +11,7 @@
     "cross-env": "^10.1.0",
     "cross-spawn": "^7.0.6",
     "eslint": "^10.1.0",
+    "http-server": "^14.1.1",
     "husky": "^8.0.3",
     "i18next-scanner": "^4.6.0",
     "lint-staged": "^15.5.2",
