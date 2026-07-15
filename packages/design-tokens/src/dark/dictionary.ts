@@ -2856,7 +2856,7 @@ const dictionary = [
 		name: 'coralRadiusS',
 		type: 'radius',
 		description: ``,
-		value: '0.25rem',
+		value: '0.5rem',
 		id: '65982381-4783-11ec-a826-6db8532cd4e8',
 	},
 	{
