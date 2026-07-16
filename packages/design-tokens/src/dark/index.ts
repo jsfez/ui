@@ -319,7 +319,7 @@ const tokens = {
 	coralRadiusM: `var(--coral-radius-m, 0.5rem)`,
 	coralRadiusL: `var(--coral-radius-l, 1rem)`,
 	coralRadiusRound: `var(--coral-radius-round, 6249.9375rem)`,
-	coralRadiusS: `var(--coral-radius-s, 0.25rem)`,
+	coralRadiusS: `var(--coral-radius-s, 0.5rem)`,
 	coralBorderSSolid: `var(--coral-border-s-solid, 1px solid)`,
 	coralBorderMSolid: `var(--coral-border-m-solid, 2px solid)`,
 	coralBorderSDashed: `var(--coral-border-s-dashed, 1px dashed)`,

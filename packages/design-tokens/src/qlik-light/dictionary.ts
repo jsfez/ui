@@ -2954,7 +2954,7 @@ Developers: use Link component instead, you do not need to recreate styles.`,
 		name: 'coralRadiusS',
 		type: 'radius',
 		description: `Radius for atomic components (button, tag, tooltip, etc.) `,
-		value: '0.25rem',
+		value: '0.5rem',
 		id: '52824640-4783-11ec-a826-6db8532cd4e8',
 	},
 	{
